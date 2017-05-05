@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E01F933-A4FD-426C-B7F8-8A8DEE4953A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DSTP_BLL</RootNamespace>
+    <AssemblyName>DSTP_BLL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=5.0.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Su\Desktop\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Users\Su\Desktop\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>C:\Users\Su\Desktop\DAS-Tester\DAS-Tester\bin\Debug\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Extended">
+      <HintPath>C:\Users\Su\Desktop\DAS-Tester\DAS-Tester\bin\Debug\NLog.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassToApp\APP.cs" />
+    <Compile Include="ClassToApp\AppModel.cs" />
+    <Compile Include="ClassToApp\ClassConnectToAPP.cs" />
+    <Compile Include="ClassToLan\ClassConnectToLan.cs" />
+    <Compile Include="ClassToLan\Lan.cs" />
+    <Compile Include="ClassToLan\LanModel.cs" />
+    <Compile Include="ClassToOther\ClassOther.cs" />
+    <Compile Include="ClassToOther\JSON.cs" />
+    <Compile Include="ClassToOther\logNLogHelper.cs" />
+    <Compile Include="ClassToRtu\ClassAppConfigOptions.cs" />
+    <Compile Include="ClassToRtu\ClassConnectToRtu.cs" />
+    <Compile Include="ClassToRtu\ClassDbOperationExtend.cs" />
+    <Compile Include="ClassToRtu\ClassSafeEventQueue.cs" />
+    <Compile Include="ClassToRtu\RTU.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DSTP_DAL\DSTP_DAL.csproj">
+      <Project>{901cc494-5985-4872-9d43-27d41fd13d50}</Project>
+      <Name>DSTP_DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

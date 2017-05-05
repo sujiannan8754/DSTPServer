@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSTP_UI", "DSTPServer\DSTP_UI.csproj", "{C80071D1-8C98-4E5F-BF1B-7E0374C6040C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSTP_DAL", "DSTP_DAL\DSTP_DAL.csproj", "{901CC494-5985-4872-9D43-27D41FD13D50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSTP_BLL", "DSTP_BLL\DSTP_BLL.csproj", "{5E01F933-A4FD-426C-B7F8-8A8DEE4953A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C80071D1-8C98-4E5F-BF1B-7E0374C6040C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C80071D1-8C98-4E5F-BF1B-7E0374C6040C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C80071D1-8C98-4E5F-BF1B-7E0374C6040C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C80071D1-8C98-4E5F-BF1B-7E0374C6040C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{901CC494-5985-4872-9D43-27D41FD13D50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{901CC494-5985-4872-9D43-27D41FD13D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{901CC494-5985-4872-9D43-27D41FD13D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{901CC494-5985-4872-9D43-27D41FD13D50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E01F933-A4FD-426C-B7F8-8A8DEE4953A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E01F933-A4FD-426C-B7F8-8A8DEE4953A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E01F933-A4FD-426C-B7F8-8A8DEE4953A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E01F933-A4FD-426C-B7F8-8A8DEE4953A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
