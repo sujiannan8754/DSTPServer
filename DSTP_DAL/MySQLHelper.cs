@@ -261,7 +261,9 @@ namespace DSTP_DAL
         public long ExecuteInsertId(string SqlString, MySqlParameter[] parms)
         {
             if (Conn == null || Conn.State != ConnectionState.Open)
+            {
                 ConnTo();
+            }
             try
             {
                 MySqlCommand cmd = new MySqlCommand();
