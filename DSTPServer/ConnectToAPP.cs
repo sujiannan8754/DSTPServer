@@ -397,7 +397,6 @@ namespace DSTPServer
                 {
                     case 11:
                         #region 登录验证
-
                         //接收信息
                         Login login = JsonHelper.DeserializeJsonToObject<Login>(strRx);
 
