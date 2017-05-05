@@ -19,7 +19,7 @@ namespace DSTPServer
     public delegate void deleWriteDebugBox1(string strText, int writeMode);
 
     /// <summary>
-    /// APP连接管理
+    /// APP连接管理类
     /// </summary>
     class ConnectToAPP
     {
