@@ -15,7 +15,7 @@ namespace DSTP_DAL
         /// <summary>
         /// 数据库连接串
         /// </summary>
-        private string ConnString = "Server=127.0.0.1;Port=3306;DataBase=db_dstp;Uid=root;Pwd=root;pooling=false;charset=utf8;Allow User Variables=True;";
+        private string ConnString = "Server=127.0.0.1;Port=3306;DataBase=db_dstp;Uid=root;Pwd=root;pooling=false;charset=utf8;";
         /// <summary>
         /// 数据库连接
         /// </summary>
@@ -31,7 +31,7 @@ namespace DSTP_DAL
         /// <summary>
         /// 超时（秒）
         /// </summary>
-        public int TimeOut = 100;
+        public int TimeOut = 0;
 
         /// <summary>
         /// 去掉SQL中的特殊字符

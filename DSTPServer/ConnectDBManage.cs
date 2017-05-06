@@ -14,7 +14,6 @@ namespace DSTPServer
     /// </summary>
     public class ConnectDBManage
     {
-        MySQLHelper MySQL;
 
         /// <summary>
         /// 写数据库时的的互斥锁
@@ -49,18 +48,6 @@ namespace DSTPServer
             WriteDBMutex[1] = WriteLogMutex;
             WriteDBMutex[2] = WriteRTUDataMutex;
             WriteDBMutex[3] = WriteRTUpicMutex;
-
-
-            MySQL = new MySQLHelper();
-            try
-            {
-                MySQL.ConnTo();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("数据库连接失败");
-                DSTP_BLL.ClassToOther.LogHelperNLog.WriteLog(DSTP_BLL.ClassToOther.myLogLevel.INFOMATION, " ConnectDBManage " + ex.Message.ToString());
-            }
         }
     }
 }

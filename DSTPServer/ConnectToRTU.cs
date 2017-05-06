@@ -692,6 +692,8 @@ namespace DSTPServer
 
                         string str = string.Format("   {0}   图片接收超时", rtu.RTU_No.ToString());
                         dstp.Invoke(writeDebug, new object[] { str, 0 });
+
+                        rtu.bHeartBeat = true;
                     }
                     else
                     {
