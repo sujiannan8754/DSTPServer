@@ -697,7 +697,14 @@ namespace DSTP_DAL
                     Project.Start_Date = Convert.ToDateTime(dr["Start_Date"].ToString());
                     Project.Jar_Shape = dr["Jar_Shape"].ToString();
                     Project.Jar_Size = dr["Jar_Size"].ToString();
-                    Project.Jar_Volume = float.Parse(dr["Jar_Volume"].ToString());
+                    if(dr["Jar_Volume"].ToString()==null || dr["Jar_Volume"].ToString()=="")
+                    {
+                        Project.Jar_Volume = 0;
+                    }
+                    else
+                    {
+                        Project.Jar_Volume = float.Parse(dr["Jar_Volume"].ToString());
+                    }
                     Project.RTU_No = Convert.ToInt32(dr["RTU_No"].ToString());
                     Project.Construction_Name = dr["Construction_Name"].ToString();
                     Project.Construction_Well_ID = dr["Construction_Well_ID"].ToString();
@@ -720,15 +727,78 @@ namespace DSTP_DAL
                     Project.Con_Begin_Pic7 = dr["Con_Begin_Pic7"].ToString();
                     Project.Con_Begin_Pic8 = dr["Con_Begin_Pic8"].ToString();
                     Project.Con_Begin_Pic9 = dr["Con_Begin_Pic9"].ToString();
-                    Project.Con_Begin_OilPressure = float.Parse(dr["Con_Begin_OilPressure"].ToString());
-                    Project.Con_Begin_CasingPressure = float.Parse(dr["Con_Begin_CasingPressure"].ToString());
-                    Project.Con_Begin_Dayinflow = float.Parse(dr["Con_Begin_Dayinflow"].ToString());
-                    Project.Con_Begin_IsSeparate = Convert.ToInt32(dr["Con_Begin_IsSeparate"].ToString());
-                    Project.Con_Begin_SepPresure = float.Parse(dr["Con_Begin_SepPresure"].ToString());
-                    Project.End_Date = Convert.ToDateTime(dr["End_Date"].ToString());
-                    Project.Con_End_OilPressure = float.Parse(dr["Con_End_OilPressure"].ToString());
-                    Project.Con_End_CasingPressure = float.Parse(dr["Con_End_CasingPressure"].ToString());
-                    Project.Con_End_Dayinflow = float.Parse(dr["Con_End_Dayinflow"].ToString());
+                    if (dr["Con_Begin_OilPressure"].ToString() != null && dr["Con_Begin_OilPressure"].ToString() != "")
+                    {
+                        Project.Con_Begin_OilPressure = float.Parse(dr["Con_Begin_OilPressure"].ToString());
+                    }
+                    else
+                    {
+                        Project.Con_Begin_OilPressure = 0;
+                    }
+                    if (dr["Con_Begin_CasingPressure"].ToString() != null && dr["Con_Begin_CasingPressure"].ToString() != "")
+                    {
+                        Project.Con_Begin_CasingPressure = float.Parse(dr["Con_Begin_CasingPressure"].ToString());
+                    }
+                    else
+                    {
+                        Project.Con_Begin_CasingPressure = 0;
+                    }
+                    if (dr["Con_Begin_Dayinflow"].ToString() != null && dr["Con_Begin_Dayinflow"].ToString() != "")
+                    {
+                        Project.Con_Begin_Dayinflow = float.Parse(dr["Con_Begin_Dayinflow"].ToString());
+                    }
+                    else
+                    {
+                        Project.Con_Begin_Dayinflow = 0;
+                    }
+                    if (dr["Con_Begin_IsSeparate"].ToString() != null && dr["Con_Begin_IsSeparate"].ToString() != "")
+                    {
+                        Project.Con_Begin_IsSeparate = Convert.ToInt32(dr["Con_Begin_IsSeparate"].ToString());
+                    }
+                    else
+                    {
+                        Project.Con_Begin_IsSeparate = 0;
+                    }
+                    if (dr["Con_Begin_SepPresure"].ToString() != null && dr["Con_Begin_SepPresure"].ToString() != "")
+                    {
+                        Project.Con_Begin_SepPresure = float.Parse(dr["Con_Begin_SepPresure"].ToString());
+                    }
+                    else
+                    {
+                        Project.Con_Begin_SepPresure = 0;
+                    }
+                    if (dr["End_Date"].ToString() != null && dr["End_Date"].ToString() != "")
+                    {
+                        Project.End_Date = Convert.ToDateTime(dr["End_Date"].ToString());
+                    }
+                    else
+                    {
+                        Project.End_Date = DateTime.MinValue;
+                    }
+                    if (dr["Con_End_OilPressure"].ToString() != null && dr["Con_End_OilPressure"].ToString() != "")
+                    {
+                        Project.Con_End_OilPressure = float.Parse(dr["Con_End_OilPressure"].ToString());
+                    }
+                    else
+                    {
+                        Project.Con_End_OilPressure = 0;
+                    }
+                    if (dr["Con_End_CasingPressure"].ToString() != null && dr["Con_End_CasingPressure"].ToString() != "")
+                    {
+                        Project.Con_End_CasingPressure = float.Parse(dr["Con_End_CasingPressure"].ToString());
+                    }
+                    else
+                    {
+                        Project.Con_End_CasingPressure = 0;
+                    }
+                    if (dr["Con_End_Dayinflow"].ToString() != null && dr["Con_End_Dayinflow"].ToString() != "")
+                    {
+                        Project.Con_End_Dayinflow = float.Parse(dr["Con_End_Dayinflow"].ToString());
+                    }
+                    else
+                    {
+                        Project.Con_End_Dayinflow = 0;
+                    }
                     Project.CasPre_Cause = dr["CasPre_Cause"].ToString();
                     Project.Con_End_Pic1 = dr["Con_End_Pic1"].ToString();
                     Project.Project_State = Convert.ToInt32(dr["Project_State"].ToString());
