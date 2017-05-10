@@ -550,14 +550,22 @@ namespace DSTPServer
                         #endregion
 
                         dstp.ConDBM.WriteProjectMutex.WaitOne();
-                        if(PM.End_Date>PM.Start_Date || PM.End_Date==DateTime.MinValue) //只有施工结束日期大于施工开始日期或者施工结束日期为最小（没有填写）时才进行操作
+                        if (Project_ID != "" && Project_ID != null)//没有找到工程信息，这个工程可能已经结束了
                         {
-                            AppDAL.UpdateProject(PM, Jam, up.Data1, out Error, out ErrorMessage);
+                            if (PM.End_Date > PM.Start_Date || PM.End_Date == DateTime.MinValue) //只有施工结束日期大于施工开始日期或者施工结束日期为最小（没有填写）时才进行操作
+                            {
+                                AppDAL.UpdateProject(PM, Jam, up.Data1, out Error, out ErrorMessage);
+                            }
+                            else
+                            {
+                                Error = 1;
+                                ErrorMessage = "施工结束日期填写有误";
+                            }
                         }
                         else
                         {
                             Error = 1;
-                            ErrorMessage = "施工结束日期填写有误";
+                            ErrorMessage = "未查询到工程信息  或者  工程已结束时禁止再次修改信息";
                         }
                         dstp.ConDBM.WriteProjectMutex.ReleaseMutex();
 

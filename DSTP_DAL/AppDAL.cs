@@ -458,7 +458,7 @@ namespace DSTP_DAL
             bool bRst = false;
             string SQLString = "";
             //先判断堵剂信息是不是空
-            if (JM != null)
+            if (JM != null && JM.Count!=0)
             {
                 //不是空的情况下将所有相关堵剂信息删除重新更新堵剂表
                 SQLString = "delete from Jam where Project_ID=@Project_ID";
