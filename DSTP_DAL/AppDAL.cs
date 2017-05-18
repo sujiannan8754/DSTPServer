@@ -620,6 +620,7 @@ namespace DSTP_DAL
                         }
                         ProjectModel.Add(PM);
                     }
+                    ProjectModel = ProjectModel.OrderByDescending(a => a.End_Date).ToList();
                     Error = 0;
                     ErrorMessage = "";
                 }
