@@ -620,7 +620,7 @@ namespace DSTP_DAL
                         }
                         ProjectModel.Add(PM);
                     }
-                    ProjectModel = ProjectModel.OrderByDescending(a => a.End_Date).ToList();
+                    ProjectModel = ProjectModel.OrderByDescending(a => a.Start_Date).ToList();
                     Error = 0;
                     ErrorMessage = "";
                 }
@@ -882,6 +882,10 @@ namespace DSTP_DAL
             }
             else
             {
+                if(Project_ID==null|| Project_ID=="")
+                {
+                    Project_ID = SelProject_ID(Start_Date, RTU_No);
+                }
                 bool bUse = SelectProject_Log(Project_ID);
                 if (bUse == true)
                 {
