@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Threading;
 
 namespace DSTP_DAL
 {
@@ -78,7 +79,10 @@ namespace DSTP_DAL
         public DataTable ExecuteDataTable(string SqlString, MySqlParameter[] parms)
         {
             if (Conn == null || Conn.State != ConnectionState.Open)
+            {
                 ConnTo();
+                Thread.Sleep(500);//等待300毫秒，连接数据库
+            }
             try
             {
                 MySqlCommand cmd = new MySqlCommand();
@@ -163,7 +167,9 @@ namespace DSTP_DAL
             if (Conn == null || Conn.State != ConnectionState.Open)
             {
                 ConnTo();
+                Thread.Sleep(500);//等待300毫秒，连接数据库
             }
+
             try
             {
                 MySqlCommand cmd = new MySqlCommand();
@@ -217,7 +223,10 @@ namespace DSTP_DAL
         public string ExecuteFirst(string SqlString, MySqlParameter[] parms)
         {
             if (Conn == null || Conn.State != ConnectionState.Open)
+            {
                 ConnTo();
+                Thread.Sleep(500);//等待300毫秒，连接数据库
+            }
             try
             {
                 MySqlCommand cmd = new MySqlCommand();
@@ -263,6 +272,7 @@ namespace DSTP_DAL
             if (Conn == null || Conn.State != ConnectionState.Open)
             {
                 ConnTo();
+                Thread.Sleep(500);//等待300毫秒，连接数据库
             }
             try
             {
@@ -306,7 +316,10 @@ namespace DSTP_DAL
         public bool ExecuteNonQuery(string SqlString, MySqlParameter[] parms)
         {
             if (Conn == null || Conn.State != ConnectionState.Open)
+            {
                 ConnTo();
+                Thread.Sleep(500);//等待300毫秒，连接数据库
+            }
             try
             {
                 MySqlCommand cmd = new MySqlCommand();
@@ -358,7 +371,10 @@ namespace DSTP_DAL
         public bool ExecuteExists(string SqlString, MySqlParameter[] parms)
         {
             if (Conn == null || Conn.State != ConnectionState.Open)
+            {
                 ConnTo();
+                Thread.Sleep(500);//等待300毫秒，连接数据库
+            }
             try
             {
                 MySqlCommand cmd = new MySqlCommand();
