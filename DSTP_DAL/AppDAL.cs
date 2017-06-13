@@ -1315,20 +1315,10 @@ namespace DSTP_DAL
             SQLString += "Displacement,";
             SQLString += "Displacement_Acc,";
             SQLString += "Pressure,";
-            SQLString += "MAX(Detect_Time) as Detect_Time ";
+            SQLString += "Detect_Time ";
             SQLString += "from RTU_Data where ";
             SQLString += "RTU_No=@RTU_No ";
-
-            SQLString += " UNION ALL ";
-
-            SQLString += "select ";
-            SQLString += "RTU_No,";
-            SQLString += "Displacement,";
-            SQLString += "Displacement_Acc,";
-            SQLString += "Pressure,";
-            SQLString += "MAX(Detect_Time) as Detect_Time ";
-            SQLString += "from RTU_Data rtu_data_history where ";
-            SQLString += "RTU_No=@RTU_No ";
+            SQLString += "ORDER BY Detect_Time DESC LIMIT 1 ";
 
             MySqlParameter[] comParamerer = new MySqlParameter[]
             {

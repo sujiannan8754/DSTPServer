@@ -16,7 +16,7 @@ namespace DSTP_DAL
         /// <summary>
         /// 数据库连接串
         /// </summary>
-        private string ConnString = "Server=127.0.0.1;Port=3306;DataBase=db_dstp;Uid=root;Pwd=root;pooling=false;charset=utf8;";
+        private string ConnString = "Server=localhost;Port=3306;DataBase=db_dstp;Uid=root;Pwd=root;pooling=false;charset=utf8;";
         /// <summary>
         /// 数据库连接
         /// </summary>
